@@ -35,6 +35,17 @@
             <canvas id="radarChart1"></canvas>
         </div>     
     </div>
+    <script type="text/javascript">
+        function getURLParameter(e) {
+            return decodeURI((new RegExp(e + "=(.+?)(&|$)").exec(location.search) || [, ""])[1]);
+        }
+        
+        if (getURLParameter("repo") === "") {
+            console.log("No URL param value found.");
+        } else {
+            document.getElementById('repoInput').value = getURLParameter("repo");
+        }
+    </script>
     <script src="./JS/fetch-api.js"></script>
     <script src="./JS/radar-chart.js"></script> 
     <script src="./JS/faq.js"></script> 
